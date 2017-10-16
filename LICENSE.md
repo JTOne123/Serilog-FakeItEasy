@@ -1,7 +1,7 @@
  DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE 
                     Version 1, October 2017 
 
- Copyright (C) 2017 André Davis <cubicle.jockey@live.com>, Eric Mashlan <> 
+ Copyright (C) 2017 André Davis <cubicle.jockey@live.com>, Eric Mashlan <eric.mashlan@gmail.com> 
 
  Everyone is permitted to copy and distribute verbatim or modified 
  copies of this license document, and changing it is allowed as long 
