@@ -2,6 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>André Davis, Eric Mashlan</Authors>
+    <Description>This library is to provide a way to make sure your Log methods have been called when unit testing.</Description>
+    <Copyright>2017</Copyright>
+    <PackageLicenseUrl>http://www.wtfpl.net</PackageLicenseUrl>
+    <PackageProjectUrl />
+    <RepositoryUrl>https://github.com/CubicleJockey/Serilog-FakeItEasy</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
