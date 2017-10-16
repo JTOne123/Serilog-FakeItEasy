@@ -4,21 +4,25 @@ using Serilog.Events;
 using System;
 using System.Linq.Expressions;
 
-namespace Sentinel.Web.Tests
+namespace SerilogFakeItEasy
 {
+    /// <summary>
+    /// This class was created to compensate for some tribal knowledge. When testing with FakeItEasy and wanting to make sure
+    /// logging was called with the appropriate messages given the logic we noticed the mocking/faking becomes very different
+    /// whether you use Log.Information vs Log.Logger.Information.
+    ///
+    /// If your team deviates from Log.Information standard and uses Log.Logger.Information you need to Fake different methods.
+    /// This information is only known if you go to the source on GitHub.
+    /// 
+    /// Log.Information requires you to Fake method(s) called .Write(). Whereas Log.Logger.Information requires to Fake Method(s) .Information()
+    /// </summary>
     public static class FakeLogger
     {
         private static ILogger logger;
 
-        private static void SetLogger()
-        {
-            if (logger != null) return;
+        #region Information Messages
 
-            logger = A.Fake<ILogger>();
-            Log.Logger = logger;
-        }
-
-        public static Expression<Action> Information(string messageTemplate, params  object[] propertyValue)
+        public static Expression<Action> Information(string messageTemplate, params object[] propertyValue)
         {
             return Write(LogEventLevel.Information, messageTemplate, propertyValue);
         }
@@ -27,6 +31,10 @@ namespace Sentinel.Web.Tests
         {
             return Write(LogEventLevel.Information, message);
         }
+
+        #endregion
+
+        #region Error Messages
 
         public static Expression<Action> Error(string message, Exception ex)
         {
@@ -43,6 +51,15 @@ namespace Sentinel.Web.Tests
             return Write(LogEventLevel.Error, ex, message, propertyValues);
         }
 
+        public static Expression<Action> Error(string message, params object[] propertyValues)
+        {
+            return Write(LogEventLevel.Error, message, propertyValues);
+        }
+
+        #endregion
+
+        #region Fatal Messages
+
         public static Expression<Action> Fatal(string message, params object[] propertyValues)
         {
             return Write(LogEventLevel.Fatal, message, propertyValues);
@@ -51,7 +68,11 @@ namespace Sentinel.Web.Tests
         public static Expression<Action> Fatal(string message)
         {
             return Write(LogEventLevel.Fatal, message);
-        }
+        } 
+
+        #endregion
+
+        #region Warning Messages
 
         public static Expression<Action> Warning(string message, Exception ex)
         {
@@ -67,6 +88,10 @@ namespace Sentinel.Web.Tests
         {
             return Write(LogEventLevel.Warning, ex, message, propertyValues);
         }
+
+        #endregion Warning Messages
+
+        #region Helper Methods
 
         #region Write Messages
         private static Expression<Action> Write(LogEventLevel logEventLevel, string messageTemplate, params object[] propertyValues)
@@ -107,5 +132,14 @@ namespace Sentinel.Web.Tests
 
         #endregion
 
+        private static void SetLogger()
+        {
+            if (logger != null) { return; }
+
+            logger = A.Fake<ILogger>();
+            Log.Logger = logger;
+        }
+
+        #endregion Helper Methods
     }
 }

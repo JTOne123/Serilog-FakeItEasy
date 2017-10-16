@@ -11,7 +11,11 @@
     <RepositoryUrl>https://github.com/CubicleJockey/Serilog-FakeItEasy</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <Company>Andre Davis, Eric Mashlan</Company>
-    <Version>1.0.0-Beta</Version>
+    <Version>1.0.1-Beta</Version>
+    <RootNamespace>SerilogFakeItEasy</RootNamespace>
+    <FileVersion>1.0.0.1</FileVersion>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <PackageTags>Serilog FakeItEasy UnitTest</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
