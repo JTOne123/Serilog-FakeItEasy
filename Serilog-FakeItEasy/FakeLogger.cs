@@ -20,7 +20,20 @@ namespace SerilogFakeItEasy
     {
         private static ILogger logger;
 
+        /// <summary>
+        /// Clear the Fake Setup. Call in your test cleanup methods.
+        /// </summary>
+        public static void Clear()
+        {
+            Fake.ClearConfiguration(logger);
+        }
+
         #region Information Messages
+
+        public static Expression<Action> Information(string messageTemplate, object propertyValue)
+        {
+            return Write(LogEventLevel.Information, messageTemplate, propertyValue);
+        }
 
         public static Expression<Action> Information(string messageTemplate, params object[] propertyValue)
         {
@@ -51,14 +64,29 @@ namespace SerilogFakeItEasy
             return Write(LogEventLevel.Error, ex, message, propertyValues);
         }
 
+        public static Expression<Action> Error(string message, Exception ex, object propertyValue)
+        {
+            return Write(LogEventLevel.Error, ex, message, propertyValue);
+        }
+        
         public static Expression<Action> Error(string message, params object[] propertyValues)
         {
             return Write(LogEventLevel.Error, message, propertyValues);
         }
 
+        public static Expression<Action> Error(string message, object propertyValue)
+        {
+            return Write(LogEventLevel.Error, message, propertyValue);
+        }
+
         #endregion
 
         #region Fatal Messages
+
+        public static Expression<Action> Fatal(string message, object propertyValue)
+        {
+            return Write(LogEventLevel.Fatal, message, propertyValue);
+        }
 
         public static Expression<Action> Fatal(string message, params object[] propertyValues)
         {
@@ -68,7 +96,7 @@ namespace SerilogFakeItEasy
         public static Expression<Action> Fatal(string message)
         {
             return Write(LogEventLevel.Fatal, message);
-        } 
+        }
 
         #endregion
 
@@ -87,6 +115,21 @@ namespace SerilogFakeItEasy
         public static Expression<Action> Warning(string message, Exception ex, params object[] propertyValues)
         {
             return Write(LogEventLevel.Warning, ex, message, propertyValues);
+        }
+
+        public static Expression<Action> Warning(string message, Exception ex, object propertyValue)
+        {
+            return Write(LogEventLevel.Warning, ex, message, propertyValue);
+        }
+
+        public static Expression<Action> Warning(string message, params object[] propertyValues)
+        {
+            return Write(LogEventLevel.Warning, message, propertyValues);
+        }
+
+        public static Expression<Action> Warning(string message, object propertyValue)
+        {
+            return Write(LogEventLevel.Warning, message, propertyValue);
         }
 
         #endregion Warning Messages
@@ -112,7 +155,16 @@ namespace SerilogFakeItEasy
             return logExpression;
         }
 
-        private static Expression<Action> Write(LogEventLevel logEventLevel, Exception ex, string messageTemplate, string propertyValue)
+        private static Expression<Action> Write(LogEventLevel logEventLevel, string messageTemplate, object propertyValue)
+        {
+            SetLogger();
+            Expression<Action> logExpression = () => logger.Write(logEventLevel, messageTemplate, propertyValue);
+            A.CallTo(logExpression).DoesNothing();
+
+            return logExpression;
+        }
+
+        private static Expression<Action> Write(LogEventLevel logEventLevel, Exception ex, string messageTemplate, object propertyValue)
         {
             SetLogger();
             Expression<Action> logExpression = () => logger.Write(logEventLevel, ex, messageTemplate, propertyValue);
