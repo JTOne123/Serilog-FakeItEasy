@@ -13,10 +13,10 @@ Example:
 
 Setting Logger -
 ```cs
-   Log.Logger = new LoggerConfiguration()
-                    .WriteTo.LiterateConsole()
-                    .WriteTo.RollingFile("SomeLogFile.txt")
-                    .CreateLogger();
+Log.Logger = new LoggerConfiguration()
+                 .WriteTo.LiterateConsole()
+                 .WriteTo.RollingFile("SomeLogFile.txt")
+                 .CreateLogger();
 
 //Valid and Recommended [Requires mocking/faking a method '.Write(...)]
 //This method was found because the source code is open source.
@@ -26,7 +26,10 @@ Log.Information("I'll make it to the logs ya'll!");
 //This is the non-prefered way and not in the Serilog examples.
 Log.Logger.Information("I'll also make it to the logs not end result difference.");
 ```
-
+#### Requirements
+* [Visual Studio](https://www.visualstudio.com)
+* [.NET Standard 2](https://github.com/dotnet/standard)
+* [Examples - .NET Core](https://www.microsoft.com/net/core#windowscmd)
 
 #### Feature
 * [Serilog - Logging](https://serilog.net)

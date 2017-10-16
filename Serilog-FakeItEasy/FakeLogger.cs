@@ -25,8 +25,11 @@ namespace SerilogFakeItEasy
         /// </summary>
         public static void Clear()
         {
-            Log.CloseAndFlush();
-            Fake.ClearConfiguration(logger);
+            if (logger != null)
+            {
+                Fake.ClearConfiguration(logger);
+                Fake.ClearRecordedCalls(logger);
+            }
         }
 
         #region Information Messages
