@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Andre Davis, Eric Mashlan</Authors>
+    <Description>This library is to provide a way to make sure your Log methods have been called when unit testing.</Description>
+    <Copyright>2017</Copyright>
+    <PackageLicenseUrl>https://github.com/CubicleJockey/Serilog-FakeItEasy/blob/develop/LICENSE.md</PackageLicenseUrl>
+    <PackageProjectUrl />
+    <RepositoryUrl>https://github.com/CubicleJockey/Serilog-FakeItEasy</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <Company>Andre Davis, Eric Mashlan</Company>
+    <Version>1.0.2-Beta</Version>
+    <RootNamespace>SerilogFakeItEasy</RootNamespace>
+    <FileVersion>1.0.0.2</FileVersion>
+    <AssemblyVersion>1.0.0.2</AssemblyVersion>
+    <PackageTags>Serilog FakeItEasy UnitTest</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Serilog-FakeItEasy\**" />
+    <EmbeddedResource Remove="Serilog-FakeItEasy\**" />
+    <None Remove="Serilog-FakeItEasy\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FakeItEasy" Version="4.1.0" />
+    <PackageReference Include="Serilog" Version="2.5.0" />
+  </ItemGroup>
+
+</Project>
