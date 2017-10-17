@@ -33,6 +33,5 @@ namespace SerilogFakeItEasy
         {
             WriterToLogger.Clear();
         }
-
     }
 }

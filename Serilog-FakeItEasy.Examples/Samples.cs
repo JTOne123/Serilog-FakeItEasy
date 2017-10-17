@@ -25,8 +25,8 @@ namespace SerilogFakeItEasy.Examples
         [TestMethod]
         public void Simple()
         {
-            var startInfoLog = FakeLogger.Information("Starting some kind of process...");
-            var endInfoLog = FakeLogger.Information("Process ended!");
+            var startInfoLog = FakeLogger.FakeInformation.Write("Starting some kind of process...");
+            var endInfoLog = FakeLogger.FakeInformation.Write("Process ended!");
 
             var result = worker.JustLog();
 
@@ -39,12 +39,12 @@ namespace SerilogFakeItEasy.Examples
         [TestMethod]
         public void Error()
         {
-            var startInfoLog = FakeLogger.Information("Starting some kind of process...");
-            var switch1Log = FakeLogger.Information("Count is [1].");
-            var switch2Log = FakeLogger.Information("Count is [2].");
-            var warning1Log = FakeLogger.Warning("Number is getting too big. [3].");
-            var warning2Log = FakeLogger.Warning("Last warning.....tooo high [4].");
-            var errorLog = FakeLogger.Error("[5] -> That's it I'm aslpoding........ahhhhhhhhhhhhhhh boom!");
+            var startInfoLog = FakeLogger.FakeInformation.Write("Starting some kind of process...");
+            var switch1Log = FakeLogger.FakeInformation.Write("Count is [1].");
+            var switch2Log = FakeLogger.FakeInformation.Write("Count is [2].");
+            var warning1Log = FakeLogger.FakeWarning.Write("Number is getting too big. [3].");
+            var warning2Log = FakeLogger.FakeWarning.Write("Last warning.....tooo high [4].");
+            var errorLog = FakeLogger.FakeError.Write("[5] -> That's it I'm aslpoding........ahhhhhhhhhhhhhhh boom!");
 
             Assert.ThrowsException<Exception>(() => worker.JustLogWithError(), "I asploded!");
             
@@ -59,7 +59,7 @@ namespace SerilogFakeItEasy.Examples
         [TestMethod]
         public void RepeatedMessages()
         {
-            var repeatedWarning = FakeLogger.Warning("Repeat!");
+            var repeatedWarning = FakeLogger.FakeWarning.Write("Repeat!");
 
             worker.SameLogMultipleTimes();
 
