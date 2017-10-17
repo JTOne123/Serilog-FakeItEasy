@@ -1,9 +1,4 @@
-﻿using FakeItEasy;
-using System.Collections.Generic;
-using System.Linq;
-using Serilog.Core;
-
-namespace SerilogFakeItEasy
+﻿namespace SerilogFakeItEasy
 {
     /// <summary>
     /// This class was created to compensate for some tribal knowledge. When testing with FakeItEasy and wanting to make sure

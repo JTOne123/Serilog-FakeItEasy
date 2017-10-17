@@ -47,7 +47,7 @@ namespace SerilogFakeItEasy.Examples.Loggable
                         Log.Information($"Count is [{accumulator}].");
                         break;
                     case 2:
-                        Log.Warning($"Number is getting too big. [{accumulator}].");
+                        Log.Warning("Number is getting too big. [{Accumulator}].", accumulator);
                         break;
                     case 3:
                         Log.Warning($"Last warning.....tooo high [{accumulator}].");
