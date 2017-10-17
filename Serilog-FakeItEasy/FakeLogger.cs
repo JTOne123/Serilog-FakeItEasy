@@ -28,6 +28,5 @@
         {
             WriterToLogger.Clear();
         }
-
     }
 }
