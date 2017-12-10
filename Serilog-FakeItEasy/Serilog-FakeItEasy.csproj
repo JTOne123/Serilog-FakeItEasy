@@ -7,7 +7,7 @@
     <Description>This library is to provide a way to make sure your Log methods have been called when unit testing.</Description>
     <Copyright>2017</Copyright>
     <PackageLicenseUrl>https://github.com/CubicleJockey/Serilog-FakeItEasy/blob/develop/LICENSE.md</PackageLicenseUrl>
-    <PackageProjectUrl />
+    <PackageProjectUrl>https://github.com/CubicleJockey/Serilog-FakeItEasy</PackageProjectUrl>
     <RepositoryUrl>https://github.com/CubicleJockey/Serilog-FakeItEasy</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <Company>Andre Davis, Eric Mashlan</Company>
