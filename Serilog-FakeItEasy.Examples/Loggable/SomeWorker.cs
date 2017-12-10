@@ -41,19 +41,19 @@ namespace SerilogFakeItEasy.Examples.Loggable
                 switch (i)
                 {
                     case 0:
-                        Log.Information($"Count is [{accumulator}].");
+                        Log.Information("Count is [{Accumulator}].", accumulator);
                         break;
                     case 1:
-                        Log.Information($"Count is [{accumulator}].");
+                        Log.Information("Count is [{Accumulator}].", accumulator);
                         break;
                     case 2:
                         Log.Warning("Number is getting too big. [{Accumulator}].", accumulator);
                         break;
                     case 3:
-                        Log.Warning($"Last warning.....tooo high [{accumulator}].");
+                        Log.Warning("Last warning.....tooo high [{Accumulator}].", accumulator);
                         break;
                     case 4:
-                        Log.Error($"[{accumulator}] -> That's it I'm aslpoding........ahhhhhhhhhhhhhhh boom!");
+                        Log.Error("[{Accumulator}] -> That's it I'm aslpoding........ahhhhhhhhhhhhhhh boom!", accumulator);
                         throw new Exception("I asploded!");
                     default:
                         throw new NotImplementedException("You found a super awesome edge case.");

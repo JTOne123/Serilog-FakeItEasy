@@ -20,7 +20,7 @@ namespace SerilogFakeItEasy
 
         public static void Clear()
         {
-            if (logger == null) return;
+            if (logger == null) { return; }
             Fake.ClearConfiguration(logger);
             Fake.ClearRecordedCalls(logger);
         }

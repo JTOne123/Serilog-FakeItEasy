@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2002
+VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serilog-FakeItEasy", "Serilog-FakeItEasy\Serilog-FakeItEasy.csproj", "{9A468BF7-4023-408C-B4FC-01A2AE2E0F64}"
 EndProject
@@ -13,7 +13,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serilog-FakeItEasy.Examples", "Serilog-FakeItEasy.Examples\Serilog-FakeItEasy.Examples.csproj", "{26BB515D-3B00-4DB6-AD7A-7504FA9CE472}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serilog-FakeItEasy.Examples", "Serilog-FakeItEasy.Examples\Serilog-FakeItEasy.Examples.csproj", "{26BB515D-3B00-4DB6-AD7A-7504FA9CE472}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SampleProjects", "SampleProjects", "{9DB133CE-94C9-4F69-BB0E-183BDF809D8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serilog-FakeItEasy.SampleCoreWebApi", "Serilog-FakeItEasy.SampleCoreWebApi\Serilog-FakeItEasy.SampleCoreWebApi.csproj", "{7B344A1C-8B76-4982-AF4C-C8E406A9ECB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,9 +33,16 @@ Global
 		{26BB515D-3B00-4DB6-AD7A-7504FA9CE472}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26BB515D-3B00-4DB6-AD7A-7504FA9CE472}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26BB515D-3B00-4DB6-AD7A-7504FA9CE472}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B344A1C-8B76-4982-AF4C-C8E406A9ECB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B344A1C-8B76-4982-AF4C-C8E406A9ECB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B344A1C-8B76-4982-AF4C-C8E406A9ECB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B344A1C-8B76-4982-AF4C-C8E406A9ECB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7B344A1C-8B76-4982-AF4C-C8E406A9ECB0} = {9DB133CE-94C9-4F69-BB0E-183BDF809D8C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {19CFB8CE-D5B1-4FF0-8A1A-24D07529B471}

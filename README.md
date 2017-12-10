@@ -26,6 +26,14 @@ Log.Information("I'll make it to the logs ya'll!");
 //This is the non-prefered way and not in the Serilog examples.
 Log.Logger.Information("I'll also make it to the logs not end result difference.");
 ```
+
+<br/>
+
+#### Examples
+
+> See Example tests and usage in the [Serilog-FakeItEasy.Examples Project](Serilog-FakeItEasy.Examples/ReadMe.md)
+
+
 #### Requirements
 * [Visual Studio](https://www.visualstudio.com)
 * [.NET Standard 2](https://github.com/dotnet/standard)
