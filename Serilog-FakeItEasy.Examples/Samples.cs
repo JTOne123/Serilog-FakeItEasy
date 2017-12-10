@@ -65,5 +65,11 @@ namespace SerilogFakeItEasy.Examples
 
             A.CallTo(repeatedWarning).MustHaveHappened(Repeated.Exactly.Times(3));
         }
+
+
+        public void ExceptionHandler()
+        {
+            
+        }
     }
 }

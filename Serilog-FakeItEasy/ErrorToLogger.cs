@@ -98,6 +98,7 @@ namespace SerilogFakeItEasy
         /// </example>
         public Expression<Action> Write<T>(Exception exception, string messageTemplate, T propertyValue)
         {
+
             return WriterToLogger.Write(LogEventLevel.Error, exception, messageTemplate, propertyValue);
         }
 
